@@ -1,3 +1,4 @@
+import { AuthNav } from "@/components/auth/auth-nav";
 import { Converter } from "@/components/converter/converter";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -11,7 +12,10 @@ export default function Home() {
           </span>
           feedme
         </div>
-        <ThemeToggle />
+        <div className="flex items-center gap-1">
+          <AuthNav />
+          <ThemeToggle />
+        </div>
       </header>
       <Converter />
     </main>

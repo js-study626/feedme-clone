@@ -1,7 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import { expect, test } from "vitest";
+import { expect, test, vi } from "vitest";
 
 import Home from "@/app/page";
+
+// AuthNav는 서버에서 세션을 읽는 비동기 컴포넌트라 이 단위 테스트에서는 비워 둔다.
+vi.mock("@/components/auth/auth-nav", () => ({ AuthNav: () => null }));
 
 test("처음 화면은 URL 입력란과 비활성 변환·내보내기 버튼을 보여준다", () => {
   render(<Home />);
